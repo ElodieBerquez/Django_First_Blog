@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django blog</title>
+        <link rel="" href="">
+    </head>
+    <body>
+            {% include 'layouts/nav.html' %}
+        <div class="">
+            <h1><a href="/">Django Blog</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        {% include 'layouts/foo.html' %}
+    </body>
+</html>

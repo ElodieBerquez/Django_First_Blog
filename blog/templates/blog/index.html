@@ -1,0 +1,24 @@
+{%extends 'layouts/base.html'%}
+{% block content %}
+
+    <p>{{posts|length}} </p>
+
+    {% for post in posts %}
+        <article> 
+            <h2><a href="/blog/posts/{{post.id}}">#{{post.id}} - {{ post.title }}</a></h2>
+            <p>{{ post.body|truncatewords:1}}</p>
+
+            <p><a href="/blog/posts/{{post.id}}">Lire la suite </a></p>
+        </article>
+        
+        
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+
+    {% empty %}
+        <p> pas d'articles </p>
+    {% endfor %}
+{% endblock %}
+
+    <!-- if not forloop.last <= veut dire => Si ce n'est pas le dernier élément alors fait... -->

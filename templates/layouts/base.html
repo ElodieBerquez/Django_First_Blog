@@ -1,0 +1,26 @@
+{% load static %}
+<!-- C'est cette vue qui gère les footer et nav -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django blog</title>
+        <meta name="viewport" content="width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="{% static 'css/syle.css'%}">
+    </head>
+    <body>
+            {% include 'layouts/nav.html' %}
+        <div class="page-header">
+            <h1><a href="/">Django Blog</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+        {% include 'layouts/foo.html' %}
+    </body>
+</html>
